@@ -1,0 +1,24 @@
+<%= form_for @post do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :liked %><br />
+    <%= f.text_field :liked %>
+  </p>
+  <p>
+    <%= f.label :disliked %><br />
+    <%= f.text_field :disliked %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

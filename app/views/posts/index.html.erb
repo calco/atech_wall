@@ -1,0 +1,25 @@
+<% title "Posts" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Liked</th>
+    <th>Disliked</th>
+  </tr>
+  <% for post in @posts %>
+    <tr>
+      <td><%= post.user %></td>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.liked %></td>
+      <td><%= post.disliked %></td>
+      <td><%= link_to "Show", post %></td>
+      <td><%= link_to "Edit", edit_post_path(post) %></td>
+      <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Post", new_post_path %></p>
