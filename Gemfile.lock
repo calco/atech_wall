@@ -29,6 +29,9 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     arel (2.0.10)
+    authlogic (3.0.3)
+      activerecord (>= 3.0.7)
+      activerecord (>= 3.0.7)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     erubis (2.6.6)
@@ -72,6 +75,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic
   bcrypt-ruby
   mocha
   mysql2 (= 0.2.7)

@@ -7,6 +7,7 @@ gem 'rails', '3.0.7'
 
 gem 'mysql2', '0.2.7'
 gem "nifty-generators", :group => :development
+gem 'authlogic'
 
 # Use unicorn as the web server
 # gem 'unicorn'
