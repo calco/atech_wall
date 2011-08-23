@@ -1,22 +1,22 @@
-<% title "Posts" %>
+<% title t('posts') %>
 
 <table width=100%>
   <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Content</th>
+    <th><%=t :user %></th>
+    <th><%=t :title %></th>
+    <th><%=t :content %></th>
   </tr>
   <% for post in @posts %>
     <tr>
       <td><%= post.user.username %></td>
       <td><%= link_to post.title, post %></td>
-      <td><%= truncate(post.content, :length => 80) %></td>
-      <% if logged_in? %>
-        <td><%= link_to "Edit", edit_post_path(post) %></td>
-        <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= truncate(post.content, :length => 80, :omission => " ...") %></td>
+      <% if post.user.username = current_user %>
+        <td><%= link_to t('edit'), edit_post_path(post) %></td>
+        <td><%= link_to t('delete'), post, :confirm => 'Are you sure?', :method => :delete %></td>
       <% end %>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Post", new_post_path %></p>
+<p><%= link_to t('new_post'), new_post_path %></p>

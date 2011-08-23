@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ar:
+  content: "المحتوى"
+  delete: "حذف"
+  edit: "تعديل"
+  last_edited: "تم تعديلها"
+  login: "تسجيل الدخول"
+  logout: "خروج"
+  new_post: "مشاركة جديدة"
+  post: "مشاركة"
+  posts: "مشاركات"
+  sign_up: "اشتراك"
+  title: "العنوان"
+  untitled: "غير معنونة"
+  user: "المستخدم"
+  view_all: "مشاهدة الكل"

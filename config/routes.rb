@@ -1,20 +1,22 @@
 AtechWall::Application.routes.draw do
-  match 'user/edit' => 'users#edit', :as => :edit_current_user
+  
+  root :to => "posts#index"
 
+  resources :sessions
+    
   match 'signup' => 'users#new', :as => :signup
 
   match 'logout' => 'sessions#destroy', :as => :logout
 
   match 'login' => 'sessions#new', :as => :login
-
-  resources :sessions
-
-  resources :users
-
-  root :to => "posts#index"
   
-  resources :posts
+  scope "(:locale)", :locale => /en|ar/ do
+    match 'user/edit' => 'users#edit', :as => :edit_current_user
 
+    resources :users
+
+    resources :posts
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,19 +1,27 @@
-<% title "Post" %>
+<% title t('post') %>
 
 <p>
-	<strong>User:</strong>
+	<strong><%=t :user %>:</strong>
 	<%= @post.user.username %>
 <p>
-  <strong>Title:</strong>
+  <strong><%=t :title %>:</strong>
   <%= @post.title %>
 </p>
 <p>
-  <strong>Content:</strong>
+  <strong><%=t :content %>:</strong>
   <%= @post.content %>
+</p>
+<p>
+	<% if @post.updated_at != @post.created_at %>
+	  <strong><%=t :last_edited %>:</strong>
+	  <%= @post.updated_at.strftime("%I:%M %p, %d %b %y") %>
+  <% end %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_post_path(@post) %> |
-  <%= link_to "Destroy", @post, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", posts_path %>
+	<% if @post.user.username = current_user %>
+		<%= link_to t('edit'), edit_post_path(@post) %> |
+		<%= link_to t('delete'), @post, :confirm => 'Are you sure?', :method => :delete %> |
+	<% end %>
+	<%= link_to t('view_all'), posts_path %>
 </p>
