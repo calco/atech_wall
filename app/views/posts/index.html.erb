@@ -8,9 +8,7 @@
   </tr>
   <% for post in @posts %>
     <tr>
-      <td><% if post.user %>
-    <%= post.user.username %>
-  <% end %></td>
+      <td><%= post.user.username %></td>
       <td><%= link_to post.title, post %></td>
       <td><%= truncate(post.content, :length => 80) %></td>
       <% if logged_in? %>

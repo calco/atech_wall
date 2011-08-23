@@ -1,10 +1,8 @@
 <% title "Post" %>
 
 <p>
-  <strong>User:</strong>
-  <% if @post.user %>
-	  <%= @post.user.username %>
-  <% end %>
+	<strong>User:</strong>
+	<%= @post.user.username %>
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
