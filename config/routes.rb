@@ -11,7 +11,7 @@ AtechWall::Application.routes.draw do
 
   resources :users
 
-  root :to => "sessions#new"
+  root :to => "posts#index"
   
   resources :posts
 

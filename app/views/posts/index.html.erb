@@ -8,9 +8,11 @@
   </tr>
   <% for post in @posts %>
     <tr>
-      <td><%= post.user %></td>
-      <td><%= post.title %></td>
-      <td><%= truncate(post.content, :length => 80) %> <%= link_to "Read more", post %></td>
+      <td><% if post.user %>
+    <%= post.user.username %>
+  <% end %></td>
+      <td><%= link_to post.title, post %></td>
+      <td><%= truncate(post.content, :length => 80) %></td>
       <% if logged_in? %>
         <td><%= link_to "Edit", edit_post_path(post) %></td>
         <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %></td>

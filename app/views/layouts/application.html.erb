@@ -8,6 +8,11 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div>
+      <% unless logged_in? %>
+        <%= link_to "Login", login_path %> | <%= link_to "Sign Up", signup_path %>
+      <% end %>
+    </div>
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

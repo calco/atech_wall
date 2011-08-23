@@ -2,7 +2,9 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <% if @post.user %>
+	  <%= @post.user.username %>
+  <% end %>
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
