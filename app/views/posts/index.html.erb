@@ -6,9 +6,9 @@
     <th><%=t :title %></th>
     <th><%=t :content %></th>
   </tr>
-  <% for post in @posts %>
+  <% @posts.each do |post| %>
     <tr>
-      <td><%= post.user.username %></td>
+      <td><%= link_to post.user.username, user_path(post.user) %></td>
       <td><%= link_to post.title, post %></td>
       <td><%= truncate(post.content, :length => 80, :omission => " ...") %></td>
       <% if post.user.username = current_user %>

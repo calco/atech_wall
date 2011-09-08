@@ -2,10 +2,19 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+# to_sentence options
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " and "
+      last_word_connector: ", and "
+
+# Application strings
   content: "Content"
   delete: "Delete"
   edit: "Edit"
   last_edited: "Last Edited"
+  like: "Like"
   login: "Login"
   logout: "Logout"
   new_post: "New Post"
@@ -13,6 +22,10 @@ en:
   posts: "Posts"
   sign_up: "Sign Up"
   title: "Title"
+  unlike: "Unlike"
   untitled: "Untitled"
   user: "User"
   view_all: "View All"
+  
+  flash:
+    login: "Logged in successfully."

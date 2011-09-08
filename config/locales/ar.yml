@@ -2,10 +2,24 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ar:
+
+  time:
+    formats:
+      AM: "ص"
+
+# to_sentence options
+  support:
+    array:
+      words_connector: "، "
+      two_words_connector: " و "
+      last_word_connector: "، و "
+
+# Application strings
   content: "المحتوى"
   delete: "حذف"
   edit: "تعديل"
   last_edited: "تم تعديلها"
+  like: "أعجبنى"
   login: "تسجيل الدخول"
   logout: "خروج"
   new_post: "مشاركة جديدة"
@@ -13,6 +27,10 @@ ar:
   posts: "مشاركات"
   sign_up: "اشتراك"
   title: "العنوان"
+  unlike: "الغاء اعجابى"
   untitled: "غير معنونة"
   user: "المستخدم"
   view_all: "مشاهدة الكل"
+
+  flash:
+    login: "تم تسجيل الدخول بنجاح"

@@ -67,6 +67,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     thor (0.14.6)
+    translate_routes (3.0.3)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.27)
@@ -81,3 +82,4 @@ DEPENDENCIES
   mysql2 (= 0.2.7)
   nifty-generators
   rails (= 3.0.7)
+  translate_routes

@@ -9,11 +9,18 @@
   </head>
   <body>
     <div>
+      <%= link_to t('home'), root_path %>
       <% if logged_in? %>
-        <%= link_to t('logout'), logout_path %>
+        | <%= link_to t('logout'), logout_path %>
       <% else %>
-        <%= link_to t('login'), login_path %> | <%= link_to t('sign_up'), signup_path %>
+        | <%= link_to t('login'), login_path %> | <%= link_to t('sign_up'), signup_path %>
       <% end %>
+    </div>
+    <div>
+      <%#= form_tag '', :method => :post, :url => update_current_user_path(current_user) do %>
+        <%#= select_tag 'language', options_for_select([['English', 'en'], ['Arabic', 'ar']], I18n.locale), :onchange => 'this.form.submit()' %>
+        <%#= submit_tag 'submit' %>
+      <%# end %>
     </div>
     <div id="container">
       <% flash.each do |name, msg| %>

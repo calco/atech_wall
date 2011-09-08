@@ -1,5 +1,6 @@
 AtechWall::Application.routes.draw do
-  
+
+
   root :to => "posts#index"
 
   resources :sessions
@@ -12,6 +13,12 @@ AtechWall::Application.routes.draw do
   
   scope "(:locale)", :locale => /en|ar/ do
     match 'user/edit' => 'users#edit', :as => :edit_current_user
+
+    match 'user/update' => 'users#update', :as => :update_current_user
+
+    match 'posts/:post/like' => 'posts#like', :as => :like_post
+
+    match 'posts/:post/unlike' => 'posts#unlike', :as => :unlike_post
 
     resources :users
 

@@ -14,10 +14,14 @@
 <p>
 	<% if @post.updated_at != @post.created_at %>
 	  <strong><%=t :last_edited %>:</strong>
-	  <%= @post.updated_at.strftime("%I:%M %p, %d %b %y") %>
+	  <%=t @post.updated_at.strftime("%I:%M %p, %d %b %y") %>
   <% end %>
 </p>
-
+<p>
+<%= liked(@post, current_user) %>
+<br/><br/>
+<%= likers(@likers) %>
+</p>
 <p>
 	<% if @post.user.username = current_user %>
 		<%= link_to t('edit'), edit_post_path(@post) %> |

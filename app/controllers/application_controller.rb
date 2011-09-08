@@ -1,10 +1,14 @@
 class ApplicationController < ActionController::Base
-  before_filter :set_locale
+	before_filter :set_locale
   include ControllerAuthentication
   protect_from_forgery
 
   def set_locale
-	  I18n.locale = params[:locale] || I18n.default_locale
+	  if logged_in?
+	  	I18n.locale = current_user.user_language
+	  else
+	  	I18n.default_locale
+	  end
 	end
 
 	def default_url_options(options={})

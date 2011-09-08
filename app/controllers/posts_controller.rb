@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id], :include => { :likes => :user})
+    @likers = Post.find(params[:id]).users_who_liked.map(&:username)
   end
 
   def new
@@ -42,4 +43,23 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_url, :notice => "Successfully destroyed post."
   end
+
+  ##################
+  # Custom Methods #
+  ##################
+
+  def like
+    @post = Post.find(params[:post])
+    @user = current_user
+    Like.create(:user_id => @user.id, :post_id => @post.id)
+    redirect_to @post
+  end
+
+  def unlike
+    @post = Post.find(params[:post])
+    @user = current_user
+    @like = @user.likes.where(:post_id => @post).first.destroy
+    redirect_to @post
+  end
+
 end
