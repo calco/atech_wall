@@ -23,7 +23,7 @@
 <%= likers(@likers) %>
 </p>
 <p>
-	<% if @post.user.username = current_user %>
+	<% if @post.user == current_user %>
 		<%= link_to t('edit'), edit_post_path(@post) %> |
 		<%= link_to t('delete'), @post, :confirm => 'Are you sure?', :method => :delete %> |
 	<% end %>

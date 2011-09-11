@@ -11,7 +11,7 @@
       <td><%= link_to post.user.username, user_path(post.user) %></td>
       <td><%= link_to post.title, post %></td>
       <td><%= truncate(post.content, :length => 80, :omission => " ...") %></td>
-      <% if post.user.username = current_user %>
+      <% if post.user == current_user %>
         <td><%= link_to t('edit'), edit_post_path(post) %></td>
         <td><%= link_to t('delete'), post, :confirm => 'Are you sure?', :method => :delete %></td>
       <% end %>

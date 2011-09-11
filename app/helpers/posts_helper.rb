@@ -11,10 +11,12 @@ module PostsHelper
 
 	def likers(likers_array)
 		html = ""
-		if likers_array.count == 1
-			html << "#{likers_array.to_sentence} likes this."
-		else
-			html << "#{likers_array.to_sentence} like this."
+		unless likers_array.count == 0
+			if likers_array.count == 1
+				html << "#{likers_array.to_sentence} likes this."
+			else
+				html << "#{likers_array.to_sentence} like this."
+			end
 		end
 		html.html_safe
 	end
